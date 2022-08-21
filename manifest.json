@@ -1,0 +1,23 @@
+{
+    "name": "Word Of The Day",
+    "description": "Let's learn new words everyday",
+    "version": "1.0",
+    "manifest_version": 3,
+    "background": {
+        "service_worker": "background.js"
+     },
+
+    "chrome_url_overrides": {
+        "newtab": "newtab.html"
+    },
+
+        "permissions": ["storage", "activeTab", "scripting"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": "icon.png"
+
+    }
+}
+
+    
+      
