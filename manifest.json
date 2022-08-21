@@ -1,0 +1,14 @@
+{
+    "name": "Weather Extension",
+    "description": "An extension which displays weather extension",
+    "version": "1.0",
+    "manifest_version": 3,
+    "action": {
+        "default_popup": "popup.html",
+
+      "default_icon": "./weather icon.png"
+       
+      },
+
+      "permissions": ["activeTab"]
+  }
