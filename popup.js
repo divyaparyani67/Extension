@@ -1,24 +1,12 @@
-// Initialize button with user's preferred color
-let changeColor = document.getElementById("changeColor");
+const options = {
+	method: 'GET',
+	headers: {
+		'X-RapidAPI-Key': 'e18eef537emshd92614120812e12p1b5e97jsne69c0f666fae',
+		'X-RapidAPI-Host': 'quotes15.p.rapidapi.com'
+	}
+};
 
-chrome.storage.sync.get("color", ({ color }) => {
-  changeColor.style.backgroundColor = color;
-});
-
-// When the button is clicked, inject setPageBackgroundColor into current page
-changeColor.addEventListener("click", async () => {
-  let [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
-
-  chrome.scripting.executeScript({
-    target: { tabId: tab.id },
-    function: setPageBackgroundColor,
-  });
-});
-
-// The body of this function will be executed as a content script inside the
-// current page
-function setPageBackgroundColor() {
-  chrome.storage.sync.get("color", ({ color }) => {
-    document.body.style.backgroundColor = color;
-  });
-}
+fetch('https://quotes15.p.rapidapi.com/quotes/random/?language_code=en', options)
+	.then(response => response.json())
+	.then(response => console.log(response))
+	.catch(err => console.error(err));

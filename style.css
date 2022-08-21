@@ -1,0 +1,9 @@
+p {
+  padding: 10px;
+  font-size: 20px;
+  font-family: 'Inspiration', cursive;
+  min-width: 100px;
+  width: 300px;
+  box-shadow: rgb(19, 18, 18);
+  
+}
